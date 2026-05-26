@@ -4,3 +4,5 @@ tmp/
 *.tmp
 .vscode/
 .DS_Store
+conf/secrets/
+*.secrets
