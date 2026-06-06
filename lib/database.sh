@@ -26,17 +26,3 @@ function check_db_port() {
     nc -z "$host" "$port" &>/dev/null
     return $?
 }
-
-# 检测数据库端口
-check_db_port() {
-    local db_host="127.0.0.1"
-    local db_port="3306"
-
-    if nc -z "${db_host}" "${db_port}"; then
-        echo "✅ 数据库端口 ${db_port} 检测正常"
-        return 0
-    else
-        echo "⚠️  数据库端口 ${db_port} 未开放，跳过数据库测试"
-        return 1
-    fi
-}
